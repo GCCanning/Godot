@@ -1,16 +1,10 @@
+@tool
 extends EditorScript
 # This script sets up the entire Godot isometric survival game project structure
 # Run this from the Script Editor (File > Run)
 
-var base_path = "res://"
-var scripts = {}
-var scenes = {}
-
 func _run():
 	print("Starting project setup...")
-	
-	# Create all directories
-	create_directories()
 	
 	# Create all scripts
 	create_scripts()
@@ -23,30 +17,6 @@ func _run():
 	print("1. Create a TileSet with tiles (grass, water, forest, mountain)")
 	print("2. Add player sprite assets to res://assets/sprites/")
 	print("3. Run the main.tscn scene")
-
-func create_directories():
-	print("Creating directory structure...")
-	var directories = [
-		"res://scenes",
-		"res://scenes/main",
-		"res://scenes/player",
-		"res://scenes/terrain",
-		"res://scenes/ui",
-		"res://scripts",
-		"res://scripts/terrain",
-		"res://scripts/player",
-		"res://scripts/systems",
-		"res://scripts/camera",
-		"res://assets",
-		"res://assets/tiles",
-		"res://assets/sprites",
-		"res://assets/tilesets",
-	]
-	
-	for dir_path in directories:
-		if not DirAccess.dir_exists_absolute(dir_path):
-			DirAccess.make_abs_absolute(dir_path)
-			print("  Created: " + dir_path)
 
 func create_scripts():
 	print("Creating script files...")
